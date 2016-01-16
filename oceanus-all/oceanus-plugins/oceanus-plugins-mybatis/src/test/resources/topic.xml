@@ -4,7 +4,7 @@
 
 <mapper namespace="com.bj58.oceanus.plugins.mybatis.entity.TopicMapper">
 	
-	<resultMap type="Topic" id="resultListUser">
+    <resultMap type="Topic" id="resultListUser">
         <id column="id" property="id" />
         <result column="title" property="title" />
         <result column="content" property="content" />
@@ -16,11 +16,15 @@
     	insert into qbao_bbs_topic(id, title, content, forum, sequence) values (#{id}, #{title}, #{content}, #{forum}, #{sequence})
     </insert>
     
-<!--    <select id="selectUserByID" parameterType="long" resultType="User" useCache="false">
-        select * from t_user where id = #{id}
+    <select id="selectTopicByID" parameterType="long" resultType="Topic" useCache="false">
+        select * from qbao_bbs_topic where id = #{id}
     </select>
     
-    <select id="selectUserLimit" parameterType="java.util.HashMap" resultType="User">
+    <select id="selectTopicByForum" parameterType="long" resultType="Topic" useCache="false">
+        select * from qbao_bbs_topic where id = #{id}
+    </select>
+    
+<!--    <select id="selectUserLimit" parameterType="java.util.HashMap" resultType="User">
     	select * from t_user order by id asc limit #{startIndex},#{pageSize}
     </select>
     

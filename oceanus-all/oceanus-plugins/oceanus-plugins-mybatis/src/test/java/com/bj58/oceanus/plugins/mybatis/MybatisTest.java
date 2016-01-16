@@ -74,33 +74,53 @@ public class MybatisTest {
 //        }
 //    }
 
-    @Test
-    public void insertTopic() throws SQLException {
-        
-        Config config = new Config();
-        config.setInitValue(0);
-        
-            
-        IdGenerator<Long> sequence = IdGeneratorBuilder.build(config);
-        for (long forum = 1; forum <= 3; forum++) {
-            for (long i = 1; i <= 100; i++) {
-                
-                SqlSession session = sqlSessionFactory.openSession(false);
-                int result = -1;
-                try {
-                    long id = sequence.generate();
-                    result = session.insert("com.bj58.oceanus.plugins.mybatis.entity.TopicMapper.insertTopic", new Topic(id, "topic_" + id, "content_" + id, forum, i));
-                    System.out.println("inesert result " + result);
-                    session.commit();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    session.rollback();
-                } finally {
-                    session.close();
-                }
-            }
-        }
-    }
+//    @Test
+//    public void insertTopic() throws SQLException {
+//        
+//        Config config = new Config();
+//        config.setInitValue(0);
+//        
+//            
+//        IdGenerator<Long> sequence = IdGeneratorBuilder.build(config);
+//        for (long forum = 1; forum <= 3; forum++) {
+//            for (long i = 1; i <= 100; i++) {
+//                
+//                SqlSession session = sqlSessionFactory.openSession(false);
+//                int result = -1;
+//                try {
+//                    long id = sequence.generate();
+//                    result = session.insert("com.bj58.oceanus.plugins.mybatis.entity.TopicMapper.insertTopic", new Topic(id, "topic_" + id, "content_" + id, forum, i));
+//                    System.out.println("inesert result " + result);
+//                    session.commit();
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                    session.rollback();
+//                } finally {
+//                    session.close();
+//                }
+//            }
+//        }
+//    }
+    
+    	@Test
+	public void selectTest() throws SQLException {
+//		for(long id=1; id<=3; id++){
+			SqlSession session = sqlSessionFactory.openSession(true);
+			try {
+                                System.out.println(">>>>>>>>");
+				Topic user = session.selectOne("com.bj58.oceanus.plugins.mybatis.entity.TopicMapper.selectTopicByID", Long.valueOf(18));
+				System.out.println(user);
+                                System.out.println(">>>>>>>>");
+//                                User user1 = session.selectOne("com.bj58.oceanus.plugins.mybatis.entity.UserMapper.selectUserByID", Long.valueOf(23));
+//				System.out.println(user1);
+//                                System.out.println(">>>>>>>>");
+			} catch(Exception e){
+				e.printStackTrace();
+			}finally {
+				session.close();
+			}
+//		}
+	}
 
 //	@Test
 //	public void insertTest() throws SQLException {

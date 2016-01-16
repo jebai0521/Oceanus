@@ -72,7 +72,7 @@ public class Topic {
 
     @Override
     public String toString() {
-        return "User [id=" + id + ", title=" + title + ", content=" + content + "]" + ", forum=" + forum + "]";
+        return "Topic [id=" + id + ", title=" + title + ", content=" + content + "]" + ", forum=" + forum + "]"+ ", sequence=" + sequence + "]";
     }
 
 }

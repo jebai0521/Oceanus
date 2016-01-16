@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bj58.oceanus.plugins.mybatis.entity.ForumMapper">
+	
+    <resultMap type="Forum" id="resultListUser">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="tipic_count" property="topicCount" />
+    </resultMap>
+    
+    <insert id="insertForum" parameterType="com.bj58.oceanus.plugins.mybatis.entity.Forum" keyProperty="id">
+    	insert into qbao_bbs_forum(id, name) values (#{id}, #{name})
+    </insert>
+    
+<!--    <select id="selectForumByID" parameterType="long" resultType="Forum" useCache="false">
+        select * from t_user where id = #{id}
+    </select>-->
+<!--    
+    <select id="selectForumLimit" parameterType="java.util.HashMap" resultType="User">
+    	select * from t_user order by id asc limit #{startIndex},#{pageSize}
+    </select>-->
+    
+<!--    <update id="updateForumByID" parameterType="long">
+    	update t_user set age=age where id=#{id}
+    </update>-->
+    
+    <delete id="deleteForum" parameterType="long">
+    	delete from t_user where id=#{id}
+    </delete>
+</mapper>

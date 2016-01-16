@@ -6,9 +6,9 @@
 		<property name="hibernate.dialect">org.hibernate.dialect.MySQLInnoDBDialect</property>
 		<property name="hibernate.connection.provider_class">com.bj58.oceanus.plugins.hibernate.datasource.OceanusConnectionProvider</property>
 		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-		<property name="hibernate.connection.url">jdbc:mysql://192.168.123.148:58885/test_oceanus</property>
-		<property name="hibernate.connection.username">oceanus_tester</property>
-		<property name="hibernate.connection.password">123456</property>
+		<property name="hibernate.connection.url">jdbc:mysql://nodea:3306/qbao_bbs</property>
+		<property name="hibernate.connection.username">qbao</property>
+		<property name="hibernate.connection.password">qbao</property>
 		<property name="hibernate.show_sql">true</property>
 		<property name="hibernate.current_session_context_class">thread</property>
 		<property name="hibernate.cache.provider_class">org.hibernate.cache.NoCacheProvider</property>

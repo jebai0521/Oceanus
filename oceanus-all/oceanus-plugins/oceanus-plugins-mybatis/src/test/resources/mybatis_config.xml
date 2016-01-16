@@ -6,6 +6,8 @@
 <configuration>
 	<typeAliases>
 		<typeAlias alias="User" type="com.bj58.oceanus.plugins.mybatis.entity.User" />
+                <typeAlias alias="Forum" type="com.bj58.oceanus.plugins.mybatis.entity.Forum" />
+                <typeAlias alias="Topic" type="com.bj58.oceanus.plugins.mybatis.entity.Topic" />
 	</typeAliases>
 
 	<environments default="development">
@@ -14,14 +16,16 @@
 			</transactionManager>
 			<dataSource type="com.bj58.oceanus.plugins.mybatis.datasource.OceanusDataSourceFactory">
 				<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-				<property name="url" value="jdbc:mysql://192.168.123.148:58885/test_oceanus" />
-				<property name="username" value="oceanus_tester" />
-				<property name="password" value="123456" />
+				<property name="url" value="jdbc:mysql://nodea:3306/qbao_bbs" />
+				<property name="username" value="qbao" />
+				<property name="password" value="qbao" />
 			</dataSource>
 		</environment>
 	</environments>
 
 	<mappers>
-		<mapper resource="com/bj58/oceanus/plugins/mybatis/mappers/user.xml" />
+		<mapper resource="user.xml" />
+		<mapper resource="forum.xml" />
+		<mapper resource="topic.xml" />
 	</mappers>
 </configuration>

@@ -12,6 +12,42 @@
 		</datanodes>
 	</namenode>
  
+	<namenode id="user_source3" loadbalance="">
+		<datanodes>
+			<datanode ref="user_db3" access-mode="READ-WRITE" weight="10" />
+		</datanodes>
+	</namenode>
+ 
+	<namenode id="user_source4" loadbalance="">
+		<datanodes>
+			<datanode ref="user_db4" access-mode="READ-WRITE" weight="10" />
+		</datanodes>
+	</namenode>
+ 
+	<namenode id="user_source5" loadbalance="">
+		<datanodes>
+			<datanode ref="user_db5" access-mode="READ-WRITE" weight="10" />
+		</datanodes>
+	</namenode>
+ 
+	<namenode id="user_source6" loadbalance="">
+		<datanodes>
+			<datanode ref="user_db6" access-mode="READ-WRITE" weight="10" />
+		</datanodes>
+	</namenode>
+ 
+	<namenode id="user_source7" loadbalance="">
+		<datanodes>
+			<datanode ref="user_db7" access-mode="READ-WRITE" weight="10" />
+		</datanodes>
+	</namenode>
+ 
+	<namenode id="user_source8" loadbalance="">
+		<datanodes>
+			<datanode ref="user_db8" access-mode="READ-WRITE" weight="10" />
+		</datanodes>
+	</namenode>
+ 
 
  
 </configurations>
